@@ -1,41 +1,17 @@
 [
     {
-        "family": "MaterialIcons",
+        "family": "Gilroy",
         "fonts": [
             {
-                "asset": "fonts/MaterialIcons-Regular.ttf"
-            }
-        ]
-    },
-    {
-        "family": "packages/cupertino_icons/CupertinoIcons",
-        "fonts": [
-            {
-                "asset": "packages/cupertino_icons/assets/CupertinoIcons.ttf"
-            }
-        ]
-    },
-    {
-        "family": "GoogleSans",
-        "fonts": [
-            {
-                "asset": "fonts/GoogleSans-Medium.ttf"
+                "asset": "fonts/SVN-Gilroy-Medium.otf"
             },
             {
-                "asset": "fonts/GoogleSans-Regular.ttf",
+                "asset": "fonts/SVN-Gilroy-Regular.otf",
                 "style": "regular"
             },
             {
-                "asset": "fonts/GoogleSans-Bold.ttf",
+                "asset": "fonts/SVN-Gilroy-Bold.otf",
                 "style": "bold"
-            }
-        ]
-    },
-    {
-        "family": "LineIcons",
-        "fonts": [
-            {
-                "asset": "fonts/LineIcons.ttf"
             }
         ]
     }

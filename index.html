@@ -1,11 +1,154 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <base href="/">
+
   <meta charset="UTF-8">
-  <title>Hello flutter web</title>
-  <link rel="shortcut icon" type="image/jpg" href="https://github.com/kzjn10/kzjn10.github.io/blob/master/assets/graphics/favicon.ico" />
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="AnhNDT's Portfolio Landing Page">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/android-icon-192x192.png">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+
+  <!-- Main Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Phanes team">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <!-- General info -->
+  <title>AnhNDT's Portfolio Landing Page</title>
+  <meta name=”Description” content="My Portfolio ">
+  <meta name="robots" content="noindex,nofollow">
+
+  <!-- Social icon -->
+  <meta property="og:site_name" content="Phanes Team">
+  <meta property="og:title" content="Phanes.dev is a Professional Startup Team." />
+  <meta property="og:description" content="Here we will provide you only interesting application, which you will like very much." />
+  <meta property="og:image" itemprop="image" content="icons/icon-192.png">
+  <meta property="og:type" content="article" />
+
+  <meta charset="UTF-8">
+  <title>AnhNDT's Portfolio Landing Page</title>
+  <link rel="manifest" href="manifest.json">
+
 </head>
 <body>
-  <script src="main.dart.js" type="application/javascript"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+           https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="main.dart.js" type="application/javascript"></script>
+
+<script>
+          // Your web app's Firebase configuration
+          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+          const firebaseConfig = {
+            apiKey: "AIzaSyAlcMYq0W0b0oKBwYeB7cEghz0gXs__m94",
+            authDomain: "anhndt-portfolio.firebaseapp.com",
+            projectId: "anhndt-portfolio",
+            storageBucket: "anhndt-portfolio.appspot.com",
+            messagingSenderId: "25585210546",
+            appId: "1:25585210546:web:8d139524aaecf0fb4965ab",
+            measurementId: "G-1KVKVE9KTC"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+
+</script>
+
+<!-- This script installs service_worker.js to provide PWA functionality to
+     application. For more information, see:
+     https://developers.google.com/web/fundamentals/primers/service-workers -->
+<script>
+            var serviceWorkerVersion = '1488852045';
+            var scriptLoaded = false;
+            function loadMainDartJs() {
+              if (scriptLoaded) {
+                return;
+              }
+              scriptLoaded = true;
+              var scriptTag = document.createElement('script');
+              scriptTag.src = 'main.dart.js';
+              scriptTag.type = 'application/javascript';
+              document.body.append(scriptTag);
+            }
+
+            if ('serviceWorker' in navigator) {
+              // Service workers are supported. Use them.
+              window.addEventListener('load', function () {
+                // Wait for registration to finish before dropping the <script> tag.
+                // Otherwise, the browser will load the script multiple times,
+                // potentially different versions.
+                var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
+                navigator.serviceWorker.register(serviceWorkerUrl)
+                  .then((reg) => {
+                    function waitForActivation(serviceWorker) {
+                      serviceWorker.addEventListener('statechange', () => {
+                        if (serviceWorker.state == 'activated') {
+                          console.log('Installed new service worker.');
+                          loadMainDartJs();
+                        }
+                      });
+                    }
+                    if (!reg.active && (reg.installing || reg.waiting)) {
+                      // No active web worker and we have installed or are installing
+                      // one for the first time. Simply wait for it to activate.
+                      waitForActivation(reg.installing ?? reg.waiting);
+                    } else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
+                      // When the app updates the serviceWorkerVersion changes, so we
+                      // need to ask the service worker to update.
+                      console.log('New service worker available.');
+                      reg.update();
+                      waitForActivation(reg.installing);
+                    } else {
+                      // Existing service worker is still good.
+                      console.log('Loading app from service worker.');
+                      loadMainDartJs();
+                    }
+                  });
+
+                // If service worker doesn't succeed in a reasonable amount of time,
+                // fallback to plaint <script> tag.
+                setTimeout(() => {
+                  if (!scriptLoaded) {
+                    console.warn(
+                      'Failed to load app from service worker. Falling back to plain <script> tag.',
+                    );
+                    loadMainDartJs();
+                  }
+                }, 4000);
+              });
+            } else {
+              // Service workers not supported. Just drop the <script> tag.
+              loadMainDartJs();
+            }
+
+
+        </script>
+
 </body>
 </html>
