@@ -19,7 +19,7 @@
         "family": "MaterialIcons",
         "fonts": [
             {
-                "asset": "MaterialIcons-Regular.otf"
+                "asset": "fonts/MaterialIcons-Regular.otf"
             }
         ]
     }
