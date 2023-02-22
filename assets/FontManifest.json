@@ -14,13 +14,5 @@
                 "style": "bold"
             }
         ]
-    },
-    {
-        "family": "MaterialIcons",
-        "fonts": [
-            {
-                "asset": "fonts/MaterialIcons-Regular.otf"
-            }
-        ]
     }
 ]
