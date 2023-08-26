@@ -1,5 +1,13 @@
 [
     {
+        "family": "MaterialIcons",
+        "fonts": [
+            {
+                "asset": "MaterialIcons-Regular.ttf"
+            }
+        ]
+    },
+    {
         "family": "Gilroy",
         "fonts": [
             {
